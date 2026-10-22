@@ -16,13 +16,12 @@ public class Movimiento1 : MonoBehaviour // es un metodo porque pues es una clas
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) // si se presiona la tecla de flecha hacia arriba o la tecla W
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) 
         {
-            transform.Translate(Vector3.up * velocidad * Time.deltaTime); // Time.deltaTime nos deja mover algo pero dentro de la escena
+            transform.Translate(Vector3.up * velocidad * Time.deltaTime); 
             spriteRenderer.color = Color.red;
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            spriteRenderer.color = Color.red;
         {
             transform.Translate(Vector3.down * velocidad * Time.deltaTime);
             spriteRenderer.color = Color.blue;
@@ -39,56 +38,3 @@ public class Movimiento1 : MonoBehaviour // es un metodo porque pues es una clas
         }
     }
 }
-
-// using UnityEngine; // Permite usar las clases de Unity.
-// using UnityEngine.InputSystem; // Permite usar el nuevo Input System.
-
-// // Es una clase que hereda de MonoBehaviour.
-// // Puedes agregar este script como componente a un GameObject.
-// public class Movimiento1 : MonoBehaviour
-// {
-//     // Campo público: puedes ajustar su valor en el Inspector.
-//     // Representa la velocidad en unidades por segundo.
-//     public float velocidad = 5f;
-
-//     // Unity llama a Start una vez, antes del primer Update,
-//     // cuando el componente está habilitado y puede ejecutarse.
-//     void Start()
-//     {
-//     }
-
-//     // Unity llama a Update una vez por frame.
-//     void Update()
-//     {
-//         // Obtiene el teclado actual.
-//         Keyboard teclado = Keyboard.current;
-
-//         // Si no hay un teclado disponible, termina este Update.
-//         if (teclado == null)
-//         {
-//             return;
-//         }
-
-//         // isPressed indica si la tecla está mantenida.
-//         // || significa "o": basta con presionar una de las dos.
-//         if (teclado.upArrowKey.isPressed || teclado.wKey.isPressed)
-//         {
-//             transform.Translate(Vector3.up * velocidad * Time.deltaTime);
-//         }
-
-//         if (teclado.downArrowKey.isPressed || teclado.sKey.isPressed)
-//         {
-//             transform.Translate(Vector3.down * velocidad * Time.deltaTime);
-//         }
-
-//         if (teclado.leftArrowKey.isPressed || teclado.aKey.isPressed)
-//         {
-//             transform.Translate(Vector3.left * velocidad * Time.deltaTime);
-//         }
-
-//         if (teclado.rightArrowKey.isPressed || teclado.dKey.isPressed)
-//         {
-//             transform.Translate(Vector3.right * velocidad * Time.deltaTime);
-//         }
-//     }
-// }
